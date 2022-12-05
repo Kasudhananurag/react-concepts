@@ -1,11 +1,15 @@
-import { useEffect, } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  useEffect(()=>{
-    console.log("loaded on page reload") 
-  })
+  const [num, setNum] = useState(10);
+  useEffect(() => {
+    console.log("loaded on page reload and everytime value of num")
+  },[num])
   return (
-    <h1>using useEffect</h1>
+    <div>
+      <h1>{num} times clicked</h1>
+      <button onClick={() => {setNum(num+5)}}>Add 5</button>
+    </div>
   );
 }
 

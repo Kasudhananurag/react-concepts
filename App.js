@@ -1,12 +1,11 @@
-import Props from "./Props";
-
+import { useEffect, } from "react";
 
 function App() {
+  useEffect(()=>{
+    console.log("loaded on page reload") 
+  })
   return (
-    <>
-      <Props title="this is a propss passed message" />
-      <Props title="this is a thus a reusable component" />
-    </>
+    <h1>using useEffect</h1>
   );
 }
 

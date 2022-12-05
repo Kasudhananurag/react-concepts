@@ -1,15 +1,10 @@
-import { useState } from 'react';
-import './App.css';
-import Liftstate from './Liftstate';
+import A from "./A";
+import useInc from "./useInc";
 
 function App() {
-  const getname = (e) =>{
-    console.log("in main"+e);
-  }
+  const [num, addTen] = useInc();
   return (
-    <div className="App">
-      <Liftstate getname={getname}/>
-    </div>
+    <A name = "hey there"/>
   );
 }
 

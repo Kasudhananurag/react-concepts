@@ -1,16 +1,20 @@
-import { useState } from 'react';
-import './App.css';
-import Liftstate from './Liftstate';
+import { createContext } from "react";
+import A from "./A";
+import useInc from "./useInc";
+
+const data = createContext();
 
 function App() {
-  const getname = (e) =>{
-    console.log("in main"+e);
-  }
+  const name = "anurag";
+  
   return (
-    <div className="App">
-      <Liftstate getname={getname}/>
-    </div>
+    <>
+      <data.Provider value={name}>
+        <A name="hey there" />
+      </data.Provider>
+    </>
   );
 }
 
 export default App;
+export {data};

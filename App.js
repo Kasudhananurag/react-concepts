@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import './App.css';
-import Liftstate from './Liftstate';
 
 function App() {
-  const getname = (e) =>{
-    console.log("in main"+e);
-  }
+  const info = [
+    {id:1,name:"anurag"},
+    {id:2,name:"raja"},
+    {id:3,name:"shiv"},
+    {id:4,name:"sati"}
+  ];
+
   return (
-    <div className="App">
-      <Liftstate getname={getname}/>
-    </div>
+    <>
+      <h4>
+        {
+          info.map((key)=>(
+            <p>{key.id} - {key.name} </p>
+          ))
+        }
+      </h4>
+    </>
   );
 }
 
